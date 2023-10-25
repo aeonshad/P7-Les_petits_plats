@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les petits plats - accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <img class="header-logo" src="images/logo.svg" alt="">
+            <div class="header-content">
+                <h1 class="font-title">CHERCHEZ PARMI PLUS DE 1500 RECETTES
+                    DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</h1>
+                <form class="form" action="get">
+                    <input class="form-search" type="text" placeholder="Rechercher une recette, un ingrédient, ...">
+                    <button class="form-reset" type="reset"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="form-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </header>
+        <main>
+            <section class="filter_section">
+                <div class="filter">
+                    <div class="filter-dropdown">
+                        <button class="btn-filter">
+                            <span>Ingrédients</span>
+                            <i class="fa-solid fa-chevron-up"></i>
+                            <i class="fa-solid fa-chevron-down active"></i>
+                        </button>
+                        <ul class="options" id="ingredients">
+                            <form class="form-filter" action="get">
+                                <input class="form-filter-search" type="text" placeholder="">
+                                <button class="form-filter-reset" type="reset"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                                <button class="form-filter-button" type="submit"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </ul>
+                    </div>
+                    <div class="filter-dropdown">
+                        <button class="btn-filter">
+                            <span>Appareils</span>
+                            <i class="fa-solid fa-chevron-up"></i>
+                            <i class="fa-solid fa-chevron-down active"></i>
+                        </button>
+                        <ul class="options" id="appliance">
+                            <form class="form-filter" action="get">
+                                <input class="form-filter-search" type="text" placeholder="">
+                                <button class="form-filter-reset" type="reset"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                                <button class="form-filter-button" type="submit"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </ul>
+                    </div>
+                    <div class="filter-dropdown">
+                        <button class="btn-filter">
+                            <span>Ustensiles</span>
+                            <i class="fa-solid fa-chevron-up"></i>
+                            <i class="fa-solid fa-chevron-down active"></i>
+                        </button>
+                        <ul class="options" id="ustensils">
+                            <form class="form-filter" action="get">
+                                <input class="form-filter-search" type="text" placeholder="">
+                                <button class="form-filter-reset" type="reset"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                                <button class="form-filter-button" type="submit"><i
+                                        class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+                <h2 class="font-title2" id="number"></h2>
+            </section>
+            <section class="tag_section">
+            </section>
+            <section class="recette_section">
+            </section>
+        </main>
+    </div>
+
+    <!-- Models -->
+    <script src="scripts/models/recette.js"></script>
+
+    <!-- Templates -->
+    <script src="scripts/templates/recette.js"></script>
+
+    <!-- Api -->
+    <script src="scripts/api/api.js"></script>
+
+    <!-- Utils -->
+    <script src="scripts/utils/number.js"></script>
+    <script src="scripts/utils/filter.js"></script>
+    <script src="scripts/utils/fillDropdown.js"></script>
+    <script src="scripts/utils/tag.js"></script>
+
+    <!-- Entry point -->
+    <script src="scripts/pages/index.js"></script>
+</body>
+
+</html>
