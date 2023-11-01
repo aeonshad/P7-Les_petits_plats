@@ -2,6 +2,7 @@ function tagCancel(tag, elementDropdown) {
     tag.addEventListener('click', () => {
         tag.remove();
         elementDropdown.classList.toggle('hidden');
+        resetSearchByTag(elementDropdown.innerText.toLowerCase());
     });
 }
 
@@ -20,6 +21,7 @@ async function tagInitialiser() {
             tag_section.appendChild(tag);
             option.classList.toggle('hidden');
             tagCancel(tag, option);
+            searchByTag(option.innerText.toLowerCase());
         });
     });
 }

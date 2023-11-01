@@ -301,6 +301,26 @@ main {
   margin-bottom: 20px;
   width: 46%;
 }
+.recette-card:hover {
+  transform: scale(1.035);
+  cursor: pointer;
+}
+
+.error {
+  margin: auto;
+  width: 80%;
+  height: 100%;
+  text-align: center;
+}
+.error-img {
+  width: 15%;
+  height: 15%;
+  margin-top: 25px;
+}
+.error-text {
+  font-size: 20px;
+  margin-top: 40px;
+}
 
 .filter_section {
   padding-left: 102px;

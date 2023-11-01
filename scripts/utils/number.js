@@ -1,5 +1,5 @@
 const number = document.getElementById('number');
 
-async function count() {
-    number.innerText = parseInt(recettesData.length, 10) + ' recettes';
+async function count(array) {
+    number.innerText = parseInt(array.length, 10) + ' recette(s)';
 }
