@@ -4,7 +4,6 @@ const inputForm = document.querySelectorAll('.form-filter-search');
 
 function resetInputForm() {
     inputForm.forEach((input) => {
-        console.log(input);
         input.value = '';
     });
 }
@@ -50,17 +49,19 @@ async function resetSearchByTag(text) {
             if (index !== -1) {
                 tagActive.splice(index, 1);
             }
-            recettesTagFilter = recettesFilter;
+            recettesTagFilter = recettesFilterInitial;
             tagActive.forEach((tag) => {
                 recettesTagFilter = filter(recettesTagFilter, tag);
             });
             console.log('remove main');
             console.log(recettesTagFilter);
             if (tagActive.length >= 1) {
+                console.log('remove main1');
                 display(recettesTagFilter);
             } else {
                 recettesTagFilter = [];
-                display(recettesFilter);
+                console.log('remove main2');
+                display(recettesFilterInitial);
             }
         } else {
             console.log('fin main');

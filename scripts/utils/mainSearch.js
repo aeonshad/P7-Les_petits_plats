@@ -1,5 +1,6 @@
 const searchBar = document.querySelector('.form-search');
 let recettesFilter = [];
+let recettesFilterInitial = [];
 
 function filter2(array, text) {
     return array.filter((Recette) => {
@@ -13,14 +14,16 @@ function filter2(array, text) {
 }
 
 async function search(text) {
-    if (recettesTagFilter.length > 1) {
+    console.log(text);
+    if (recettesTagFilter.length >= 1) {
         console.log('test');
         recettesFilter = filter2(recettesTagFilter, text);
     } else {
         console.log('test2');
         recettesFilter = filter2(recettesData, text);
+        recettesFilterInitial = recettesFilter;
     }
-
+    console.log(recettesFilter);
     display(recettesFilter);
 }
 
