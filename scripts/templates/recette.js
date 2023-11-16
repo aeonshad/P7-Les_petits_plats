@@ -1,10 +1,21 @@
+/**
+ * Classe représentant la carte d'une recette, utilisée pour afficher les détails de la recette.
+ */
 class RecetteCard {
     #recette;
 
+    /**
+     * Constructeur de la classe RecetteCard.
+     * @param {Object} recette - L'objet recette à afficher dans la carte.
+     */
     constructor(recette) {
         this.#recette = recette;
     }
 
+    /**
+     * Méthode qui crée la carte d'une recette avec les détails fournis.
+     * @returns {HTMLArticleElement} Le wrapper contenant la carte de la recette.
+     */
     createRecetteCard() {
         const $wrapper = document.createElement('article');
         $wrapper.setAttribute('class', 'recette-card');

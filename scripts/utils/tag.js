@@ -1,3 +1,8 @@
+/**
+ * Fonction qui gère l'événement de suppression d'un tag actif.
+ * @param {HTMLElement} tag - L'élément de tag à supprimer.
+ * @param {HTMLElement} elementDropdown - L'élément de menu déroulant associé au tag.
+ */
 function tagCancel(tag, elementDropdown) {
     tag.addEventListener('click', () => {
         tag.remove();
@@ -6,6 +11,9 @@ function tagCancel(tag, elementDropdown) {
     });
 }
 
+/**
+ * Fonction qui initialise les événements pour créer et gérer les tags à partir des options du menu déroulant.
+ */
 async function tagInitialiser() {
     const tag_section = document.querySelector('.tag_section');
     const options = document.querySelectorAll('.options li');

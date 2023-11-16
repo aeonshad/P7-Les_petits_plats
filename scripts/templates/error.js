@@ -1,3 +1,7 @@
+/**
+ * Fonction qui crée un template d'erreur pour afficher un message lorsque aucune recette ne correspond à la recherche.
+ * @returns {HTMLDivElement} Le wrapper contenant le template d'erreur.
+ */
 function errorTemplate() {
     const $wrapper = document.createElement('div');
     $wrapper.setAttribute('class', 'error');
