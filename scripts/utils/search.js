@@ -17,14 +17,33 @@ let tagActive = [];
  * @returns {Array} Le tableau filtré de recettes.
  */
 function filter(array, text) {
-    return array.filter((Recette) => {
+    const arrayFilter = [];
+
+    for (let i = 0; i < array.length; i++) {
+        const Recette = array[i];
         const nameMatch = Recette.name.toLowerCase().includes(text);
         const descriptionMatch = Recette.description.toLowerCase().includes(text);
-        const ingredientsMatch = Recette.ingredients.some((ingredient) => ingredient.ingredient.toLowerCase().includes(text));
         const appareilsMatch = Recette.appliance.toLowerCase().includes(text);
-        const ustensilesMatch = Recette.ustensils.some((ustensile) => ustensile.toLowerCase().includes(text));
-        return nameMatch || descriptionMatch || ingredientsMatch || appareilsMatch || ustensilesMatch;
-    });
+        let ingredientsMatch = false;
+        for (j = 0; j < Recette.ingredients.length; j++) {
+            if (Recette.ingredients[j].ingredient.toLowerCase().includes(text)) {
+                ingredientsMatch = true;
+                break;
+            }
+        }
+        let ustensilesMatch = false;
+        for (let k = 0; k < Recette.ustensils.length; k++) {
+            if (Recette.ustensils[k].toLowerCase().includes(text)) {
+                ustensilesMatch = true;
+                break;
+            }
+        }
+        if (nameMatch || descriptionMatch || ingredientsMatch || appareilsMatch || ustensilesMatch) {
+            arrayFilter.push(Recette);
+        }
+    }
+
+    return arrayFilter;
 }
 
 /**
