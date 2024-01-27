@@ -69,8 +69,10 @@ function resetInputForm() {
  * @param {string} text - Le texte du tag à ajouter.
  */
 async function searchByTag(text) {
+    if (tabA.length == 0) {
+        tabA = recettesData;
+    }
     tagActive.push(text);
-    console.log(tagActive);
     secondSearch();
     resetInputForm();
     display(tabC);
